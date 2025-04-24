@@ -61,5 +61,19 @@ namespace BankTests
             }
             Assert.Fail("The expected exception was not thrown.");
         }
+
+        [TestMethod]
+        public void CustomerName_ReturnsCorrectName()
+        {
+            // Arrange
+            string expectedName = "Mr. Bryan Walton";
+            BankAccount account = new BankAccount(expectedName, 11.99);
+
+            // Act
+            string actualName = account.CustomerName;
+
+            // Assert
+            Assert.AreEqual(expectedName, actualName, "Customer name is incorrect");
+        }
     }
 }
