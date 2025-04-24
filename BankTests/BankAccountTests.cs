@@ -88,5 +88,22 @@ namespace BankTests
             // Assert
             Assert.AreEqual(expectedBalance, actualBalance, 0.001, "Balance is incorrect");
         }
+
+        [TestMethod]
+        public void Credit_WithValidAmount_UpdatesBalance()
+        {
+            // Arrange
+            double beginningBalance = 11.99;
+            double creditAmount = 5.77;
+            double expected = 17.76;
+            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+
+            // Act
+            account.Credit(creditAmount);
+
+            // Assert
+            double actual = account.Balance;
+            Assert.AreEqual(expected, actual, 0.001, "Account not credited correctly");
+        }
     }
 }
