@@ -75,5 +75,18 @@ namespace BankTests
             // Assert
             Assert.AreEqual(expectedName, actualName, "Customer name is incorrect");
         }
+        [TestMethod]
+        public void Balance_ReturnsCorrectBalance()
+        {
+            // Arrange
+            double expectedBalance = 11.99;
+            BankAccount account = new BankAccount("Mr. Bryan Walton", expectedBalance);
+
+            // Act
+            double actualBalance = account.Balance;
+
+            // Assert
+            Assert.AreEqual(expectedBalance, actualBalance, 0.001, "Balance is incorrect");
+        }
     }
 }
